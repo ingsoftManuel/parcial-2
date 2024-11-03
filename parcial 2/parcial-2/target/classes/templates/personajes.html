@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personajes de Los Simpson</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+<header>
+    <h1>Personajes Principales de Los Simpson</h1>
+</header>
+
+<main class="main-content">
+    <section>
+        <div class="characters">
+            <div th:each="personaje : ${personajes}">
+                <h2 th:text="${personaje.nombre}">Nombre del Personaje</h2>
+                <img th:src="${personaje.fotoUrl}" alt="Imagen de personaje" class="character-img">
+                <p th:text="${personaje.descripcion}">Descripción del personaje</p>
+                <p><strong>Detalles:</strong> <span th:text="${personaje.detalles}">Detalles del personaje</span></p>
+            </div>
+        </div>
+    </section>
+</main>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Episodios de Los Simpson</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+<header>
+    <h1>Episodios de Los Simpson</h1>
+</header>
+
+<main class="main-content">
+    <section>
+        <div class="seasons" th:each="temporada : ${temporadas}">
+            <h2>Temporada <span th:text="${temporada.numeroTemporada}">1</span></h2>
+            <div class="episodes" th:each="episodio : ${temporada.episodios}">
+                <h3 th:text="${episodio.nombre}">Nombre del Episodio</h3>
+                <p th:text="${episodio.descripcion}">Descripción del episodio</p>
+                <img th:each="imagen : ${episodio.imagenes}" th:src="${imagen.url}" alt="Imagen del episodio" class="episode-img">
+            </div>
+        </div>
+    </section>
+</main>
+</body>
+</html>

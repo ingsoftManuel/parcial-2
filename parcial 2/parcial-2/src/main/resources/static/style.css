@@ -1,0 +1,143 @@
+/* Reiniciar márgenes y ajustes básicos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #fff7d9, #ffeb99); /* Gradiente amarillo */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    text-align: center;
+}
+
+/* Encabezado */
+header {
+    background-color: #ffc107; /* Amarillo oscuro */
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #333; /* Color desde el segundo código */
+}
+
+/* Navegación */
+.nav-links {
+    display: flex;
+    justify-content: center;
+    background-color: #ffd54f; /* Amarillo claro */
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+.nav-links a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+.nav-links a:hover {
+    background-color: #ffb300; /* Amarillo más oscuro */
+    color: #fff;
+}
+
+/* Contenido principal */
+main {
+    padding: 20px;
+    flex: 1;
+}
+.main-content {
+    padding: 20px;
+}
+
+/* Secciones */
+section {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+section h3 {
+    color: #ffc107; /* Amarillo oscuro */
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Botones de enlaces */
+.btn-links {
+    margin-top: 20px;
+}
+.btn-links a {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.btn-links a:hover {
+    background-color: #555;
+}
+
+/* Personajes y Episodios */
+.characters, .episodes {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+.character-img, .episode-img {
+    max-width: 150px;
+    border-radius: 8px;
+}
+
+/* Imágenes */
+.images {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+.images img {
+    width: 300px;
+    height: auto;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Espacio adicional para la sección de personajes */
+#personajes {
+    margin-top: 50px; /* Ajusta este valor según sea necesario */
+}
+
+/* Footer */
+footer {
+    margin-top: 40px;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+    color: #333;
+    background-color: #ffc107; /* Amarillo oscuro */
+}
+footer p {
+    margin: 5px 0;
+}

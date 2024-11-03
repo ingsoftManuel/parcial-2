@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title th:text="${serie.nombre}">Los Simpson</title>
+</head>
+<body>
+
+<header>
+    <h1 th:text="${serie.nombre}">Los Simpson</h1>
+    <p th:text="${serie.descripcion}">Una serie animada que sigue las aventuras de la familia Simpson en la ciudad de Springfield.</p>
+    <img th:src="${serie.posterUrl}" alt="Póster de la serie" class="poster-img">
+</header>
+
+<main class="main-content">
+    <h2>Bienvenidos a la página de <span th:text="${serie.nombre}">Los Simpson</span></h2>
+    <p>Explora información sobre tus personajes favoritos, episodios y más de esta icónica serie de televisión.</p>
+
+    <section>
+        <h3>Detalles de la Serie</h3>
+        <ul>
+            <li><strong>Creador:</strong> <span th:text="${serie.creador}">Matt Groening</span></li>
+            <li><strong>Clasificación:</strong> <span th:text="${serie.clasificacion}">PG-13</span></li>
+            <li><strong>Temporadas:</strong> <span th:text="${serie.numeroTemporadas}">34</span></li>
+            <li><strong>Año de Emisión:</strong> <span th:text="${serie.anoEmision}">1989</span></li>
+        </ul>
+    </section>
+
+    <article class="btn-links">
+        <!-- Actualizamos los enlaces para que se abran en nuevas pestañas -->
+        <a href="/personajes" target="_blank">Personajes</a>
+        <a href="/episodios" target="_blank">Episodios</a>
+    </article>
+
+    <section id="personajes">
+        <h3>Personajes Principales</h3>
+        <div class="characters">
+            <div th:each="personaje : ${personajes}">
+                <h4 th:text="${personaje.nombre}">Homer Simpson</h4>
+                <img th:src="${personaje.fotoUrl}" alt="Imagen de personaje" class="character-img">
+                <p th:text="${personaje.descripcion}">Descripción del personaje</p>
+                <p><strong>Detalles:</strong> <span th:text="${personaje.detalles}">Edad: 39 años, Ocupación: Inspector de seguridad</span></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="episodios">
+        <h3>Episodios por Temporada</h3>
+        <div class="seasons" th:each="temporada : ${temporadas}">
+            <h4>Temporada <span th:text="${temporada.numeroTemporada}">1</span></h4>
+            <div class="episodes" th:each="episodio : ${temporada.episodios}">
+                <h5 th:text="${episodio.nombre}">Nombre del Episodio</h5>
+                <p th:text="${episodio.descripcion}">Descripción del episodio</p>
+                <div class="episode-images">
+                    <img th:each="imagen : ${episodio.imagenes}" th:src="${imagen.url}" alt="Imagen del episodio" class="episode-img">
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>Creado por [Juan Manuel Rodriguez Pinzon] - Noviembre 2024</p>
+</footer>
+
+</body>
+</html>
